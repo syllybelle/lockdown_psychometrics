@@ -1,4 +1,4 @@
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Tuple
 
 import matplotlib.cm as cm
 import numpy as np
@@ -223,12 +223,12 @@ r$^2$ {text_r_sq}'''
                 prefix: str = "n_"
             else:
                 prefix: str = ""
-            plt.savefig(f'''{prefix}svg_{name}.svg''',
+            plt.savefig(f'''outputs/{prefix}svg_{name}.svg''',
                              transparent=True)
-            plt.savefig(f'''{prefix}png_{name}.png''',
+            plt.savefig(f'''outputs/{prefix}png_{name}.png''',
                              transparent=True)
         else:
-            item: tuple[str, Figure] = (name, plot)
+            item: Tuple[str, Figure] = (name, plot)
             return item
 
 
